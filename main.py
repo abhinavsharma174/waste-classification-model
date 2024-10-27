@@ -11,12 +11,12 @@ import tensorflow as tf
 
 # def predict(img_path):
 def getPrediction(filename):
-     model = tf.keras.models.load_model("/classrepo/HomeWork_out/Project3_ManuelaClone/UCF-PROJECT-03/final_model_weights.hdf5")
-     img = load_img('/classrepo/HomeWork_out/Project3_ManuelaClone/UCF-PROJECT-03/static/'+filename, target_size=(180, 180))
+     model = tf.keras.models.load_model("final_model_weights.hdf5")
+     img = load_img('folder/'+filename, target_size=(180, 180))
      img = img_to_array(img)
      img = img / 255
      img = np.expand_dims(img,axis=0)
-     category = model.predict_classes(img)
+     category = np.argmax(model.predict(img),axis=1)
      answer = category[0]
      probability = model.predict(img)
      probability_results = 0
