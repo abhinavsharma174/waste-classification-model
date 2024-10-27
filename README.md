@@ -59,8 +59,7 @@ project (main project folder)
 **Note:** Within the index.py and main.py files, you may need to change some file paths to match your system path structure. Within the main.py file, change the paths for line 14 and 15. Within the index.py file, change the paths for lines 14 and 41. 
 
 ## Steps:
-* Download File
-** for codespaces
+*  for codespaces
   * let it do the setup and install python extension
   * Run the command pip install -r requirement.txt
   * Run the index file
