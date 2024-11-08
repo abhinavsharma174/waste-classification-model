@@ -11,7 +11,7 @@ import os
 # Flask Setup
 #################################################
 
-UPLOAD_FOLDER = 'folder/'
+UPLOAD_FOLDER = 'static/'
 
 app = Flask(__name__)                    
 app.secret_key = '8662747133'
@@ -38,11 +38,11 @@ def submit_image():
         # Return results predictive data
           if file:
             filename = secure_filename(file.filename)
-            file.save(os.path.join('folder/', filename))
+            file.save(os.path.join('static/', filename))
             getPrediction(filename)
             answer, probability_results, filename = getPrediction(filename)
             flash(answer)
-            flash(probability_results) # accuracy
+            #flash(probability_results) # accuracy
             flash(filename)
             return redirect('/')
 

@@ -46,9 +46,7 @@
 						{% with messages = get_flashed_messages() %}
 						{% if messages %}
 							Waste Category: {{ messages[0] }}
-						<br>
-							Probability: {{ messages[1] }}
-							<img src="{{ url_for('static', filename=messages[2])}}"> 
+							<img src="{{ url_for('static', filename=messages[1])}}"> 
 						{% endif %}
 						 {% endwith %}
 					</span>

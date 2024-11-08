@@ -12,7 +12,7 @@ import tensorflow as tf
 # def predict(img_path):
 def getPrediction(filename):
      model = tf.keras.models.load_model("final_model_weights.hdf5")
-     img = load_img('folder/'+filename, target_size=(180, 180))
+     img = load_img('static/'+filename, target_size=(180, 180))
      img = img_to_array(img)
      img = img / 255
      img = np.expand_dims(img,axis=0)
@@ -22,7 +22,7 @@ def getPrediction(filename):
      probability_results = 0
 
      if answer == 1:
-          answer = "Recycle"
+          answer = "Recyclable"
           probability_results = probability[0][1]
      else:
           answer = "Organic"
